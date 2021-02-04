@@ -1,18 +1,6 @@
+touch filename.type //to create file (add file type)
+nano filename.type //to edit text using nano as notepad
+
 nasm -f elf64 -o filename.o filename.asm
 ld filename.o -o filename //to create file with no extension
 ./filename //to run file with no extension
-
-10 == "\n"
-db == define bytes
-
-Registers - are part of the processor that temporarily holds memory
-x86_64 archtecture, registers hold 64 bits 
-
-System Call - or a syscall is when a program requests a service from the KERNEL
-
-rdi == error code
-
-x86_64 sections
-.data section
-.bss section
-.text section
