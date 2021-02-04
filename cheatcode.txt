@@ -24,5 +24,6 @@ ls -a //all files even with . at the beginning
 ls -l //list long format
 ls -r //list in reverse order
 ls -s //list file size
+ls -S //sort by size
 ls -t //sort by time and date
-ls -x //sort by extension name
+ls -X //sort by extension name
