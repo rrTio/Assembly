@@ -11,3 +11,18 @@ mkdir -p OR --parent <'directory name'> //to create a directory
 mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a directory within a directory
 rm -d <'directory name'> //to delete a directory or folder
 rm -f <'file name'> //to delete a file
+pwd //full path of current working directory
+echo 'text' // prints the text within the quotation mark
+man <name> //manual of the selected name or tool
+passwd //change password
+mv oldfilename newfilename //renames the file
+cat filename //views the contents of the file
+head filename //first several lines of the file
+tail filename //last several lines of the file
+lsb_release -a //release
+ls -a //all files even with . at the beginning
+ls -l //list long format
+ls -r //list in reverse order
+ls -s //list file size
+ls -t //sort by time and date
+ls -x //sort by extension name
