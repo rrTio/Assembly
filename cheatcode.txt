@@ -1,3 +1,5 @@
+ASSEMBLY CHEATCODES
+
 touch filename.type //to create file (add file type)
 nano filename.type //to edit text using nano as notepad
 
