@@ -1,4 +1,4 @@
-ASSEMBLY CHEATCODES
+CHEATCODES
 
 touch filename.type //to create file (add file type)
 nano filename.type //to edit text using nano as notepad
@@ -6,3 +6,8 @@ nano filename.type //to edit text using nano as notepad
 nasm -f elf64 -o filename.o filename.asm
 ld filename.o -o filename //to create file with no extension
 ./filename //to run file with no extension
+
+mkdir -p OR --parent <'directory name'> //to create a directory
+mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a directory within a directory
+rm -d <'directory name'> //to delete a directory or folder
+rm -f <'file name'> //to delete a file
