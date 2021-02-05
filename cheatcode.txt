@@ -33,3 +33,4 @@ ls -s //list file size
 ls -S //sort by size
 ls -t //sort by time and date
 ls -X //sort by extension name
+lscpu //get CPU Information
