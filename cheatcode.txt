@@ -9,8 +9,13 @@ ld filename.o -o filename //to create file with no extension
 
 mkdir -p OR --parent <'directory name'> //to create a directory
 mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a directory within a directory
+touch directory/filename.type //creates file within a folder
+echo 'text' > directory/filename.type //appends the string of text in the file
+
 rm -d <'directory name'> //to delete a directory or folder
 rm -f <'file name'> //to delete a file
+
+tree //full directories and subs up to file within
 pwd //full path of current working directory
 echo 'text' // prints the text within the quotation mark
 man <name> //manual of the selected name or tool
