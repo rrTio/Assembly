@@ -13,6 +13,8 @@ mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a direct
 touch directory/filename.type //creates file within a folder
 echo 'text' > directory/filename.type //appends the string of text in the file
 
+alias <commandName>="<command>" //to create an alias
+
 rm -d <'directory name'> //to delete a directory or folder
 rm -f <'file name'> //to delete a file
 rm -rf <'file name'> OR <'file directory'> //recursive and forced deletion without permission
