@@ -1,13 +1,3 @@
-CHEATCODES
-////////////ASSEMBLY CHEATCODES////////////
-touch filename.type //to create file (add file type)
-nano filename.type //to edit text using nano as notepad
-
-nasm -f elf64 -o filename.o filename.asm
-//runNasm filename.o filename.asm// == for aliased only (runNasm is my alias)
-ld filename.o -o filename //to create file with no extension
-./filename //to run file with no extension
-
 ////////////LINUX CHEATCODES////////////
 mkdir -p OR --parent <'directory name'> //to create a directory
 mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a directory within a directory
@@ -17,7 +7,6 @@ alias <commandName>="<command>" //to create an alias
 rm -d <'directory name'> //to delete a directory or folder
 rm -f <'file name'> //to delete a file
 rm -rf <'file name'> OR <'file directory'> //recursive and forced deletion without permission
-
 tree //full directories and subs up to file within
 pwd //full path of current working directory
 echo 'text' // prints the text within the quotation mark
@@ -36,3 +25,14 @@ ls -S //sort by size
 ls -t //sort by time and date
 ls -X //sort by extension name
 lscpu //get CPU Information
+
+////////////INSTALLING USING LINUX TERMINAL////////////
+
+///For .deb files///
+sudo dpkg -i filename.deb
+sudo apt-get install -f
+
+///For .tar.gz files///
+tar -xzf filename.tar.gz
+//locate then cd to filename.sh
+./filename.sh

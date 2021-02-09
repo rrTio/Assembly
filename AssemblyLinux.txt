@@ -1,0 +1,8 @@
+////////////ASSEMBLY CHEATCODES////////////
+touch filename.type //to create file (add file type)
+nano filename.type //to edit text using nano as notepad
+
+nasm -f elf64 -o filename.o filename.asm
+//runNasm filename.o filename.asm// == for aliased only (runNasm is my alias)
+ld filename.o -o filename //to create file with no extension
+./filename //to run file with no extension
