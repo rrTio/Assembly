@@ -9,7 +9,7 @@ mov dh,11
 mov dl,39
 int 10h
 mov ah,02
-mov dl,'C
+mov dl,'C'
 int 21h
 cseg ends
 end start
