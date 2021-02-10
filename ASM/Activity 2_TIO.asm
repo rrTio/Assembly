@@ -387,13 +387,14 @@ mov ah,02;print char
 mov dl,'T'
 int 21h
 ;///////////////////////////////////////////////////////////////////////////////////
-;mov ah,09;gotoxy
-;mov dh,50;Y
-;mov dl,50;X
-;int 10h
-;mov ah,09;print char
-;mov dl,'ROZS RAVEN TIO'
-;int 21h
+data 
+message db 'ABCD $'
+data ends
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message              
+mov ah,09h                     
+int 21h
 ;int 20h
 cseg ends
 end start
