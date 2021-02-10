@@ -1,3 +1,11 @@
+data segment
+message0 db 'ROZS RAVEN TIO $'
+message1 db 'I LOVE COMICS $'
+message2 db 'I LOVE MUSIC $'
+message3 db 'BOOKISH $'
+message4 db 'WEIRD $'
+message5 db 'THIN $'
+data ends
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
@@ -387,14 +395,60 @@ mov ah,02;print char
 mov dl,'T'
 int 21h
 ;///////////////////////////////////////////////////////////////////////////////////
-data 
-message db 'ABCD $'
-data ends
+mov ah,02;gotoxy
+mov dh,10;Y
+mov dl,32;X
+int 10h
 mov ax,data                      
 mov ds,ax                         
-LEA DX,message              
+LEA DX,message0              
 mov ah,09h                     
 int 21h
-;int 20h
+mov ah,02;gotoxy
+mov dh,11;Y
+mov dl,32;X
+int 10h
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message1              
+mov ah,09h                     
+int 21h
+mov ah,02;gotoxy
+mov dh,12;Y
+mov dl,32;X
+int 10h
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message2            
+mov ah,09h                     
+int 21h
+mov ah,02;gotoxy
+mov dh,13;Y
+mov dl,32;X
+int 10h
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message3             
+mov ah,09h                     
+int 21h
+mov ah,02;gotoxy
+mov dh,14;Y
+mov dl,32;X
+int 10h
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message4              
+mov ah,09h                     
+int 21h
+mov ah,02;gotoxy
+mov dh,15;Y
+mov dl,32;X
+int 10h
+mov ax,data                      
+mov ds,ax                         
+LEA DX,message5           
+mov ah,09h                     
+int 21h
+int 20h
 cseg ends
 end start
