@@ -1,0 +1,45 @@
+CHEATCODES
+////////////ASSEMBLY CHEATCODES////////////
+touch filename.type //to create file (add file type)
+nano filename.type //to edit text using nano as notepad
+
+nasm -f elf64 -o filename.o filename.asm
+//runNasm filename.o filename.asm// == for aliased only (runNasm is my alias)
+ld filename.o -o filename //to create file with no extension
+./filename //to run file with no extension
+
+////////////LINUX CHEATCODES////////////
+mkdir -p OR --parent <'directory name'> //to create a directory
+mkdir -p OR --parent <directory1>/<directory2>/<directory3> //to create a directory within a directory
+touch directory/filename.type //creates file within a folder
+echo 'text' > directory/filename.type //appends the string of text in the file
+alias <commandName>="<command>" //to create an alias
+rm -d <'directory name'> //to delete a directory or folder
+rm -f <'file name'> //to delete a file
+rm -rf <'file name'> OR <'file directory'> //recursive and forced deletion without permission
+
+tree //full directories and subs up to file within
+pwd //full path of current working directory
+echo 'text' // prints the text within the quotation mark
+man <name> //manual of the selected name or tool
+passwd //change password
+mv oldfilename newfilename //renames the file
+cat filename //views the contents of the file
+head filename //first several lines of the file
+tail filename //last several lines of the file
+lsb_release -a //release
+ls -a //all files even with . at the beginning
+ls -l //list long format
+ls -r //list in reverse order
+ls -s //list file size
+ls -S //sort by size
+ls -t //sort by time and date
+ls -X //sort by extension name
+lscpu //get CPU Information
+
+////////////INSTALLATION USING LINUX////////////
+///for .deb files///////////////
+sudo dpkg -i file.deb
+sudo apt-get install -f
+
+///for .tar.gz files///
