@@ -26,7 +26,7 @@ mov dh,23
 mov dl,79
 int 10h
 mov ah,02;print char
-mov dl,'E'
+mov dl,'C'
 int 21h
 ;D
 mov ah,02;gotoxy
@@ -35,6 +35,14 @@ mov dl,0
 int 10h
 mov ah,02;print char
 mov dl,'D'
+int 21h
+;E
+mov ah,02;gotoxy
+mov dh,0
+mov dl,0
+int 10h
+mov ah,02;print char
+mov dl,'E'
 int 21h
 
 int 20h
