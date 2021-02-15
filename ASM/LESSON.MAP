@@ -1,8 +1,0 @@
-
- Start  Stop   Length Name               Class
-
- 00000H 0015CH 0015DH CSEG               CODE
-
-Program entry point at 0000:0100
-Warning: No stack
-
