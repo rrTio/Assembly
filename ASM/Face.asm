@@ -25,7 +25,7 @@ end start
 endm
 
 data segment
-text1 db "----------$"
+text1 db "\_________$"
 data ends
 
 cseg segment para 'code'
