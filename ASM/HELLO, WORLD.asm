@@ -10,8 +10,8 @@ mov ax,0003h
 int 10h
 ;///////////////////////////////////////
 mov ah,02
-mov dh,00
-mov dl,00
+mov dh,00;y
+mov dl,01;x
 int 10h
 mov ax,data
 mov ds,ax
