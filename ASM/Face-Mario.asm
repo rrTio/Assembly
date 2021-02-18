@@ -46,105 +46,105 @@ int 21h
 
 
 g 4, 30
-pca ' ' 4eh, 12 ;cap
+pca ' ' 4eh, 12
 
 g 5, 28
-pca ' ' 4eh, 20 ;cap
+pca ' ' 4eh, 20
 
 g 6, 28
-pca ' ' 6eh, 6 ;hair
+pca ' ' 6eh, 6
 g 6, 34
-pca ' ' 70h, 6 ;skin
+pca ' ' 70h, 6
 g 6, 42
-pca ' ' 70h, 2 ;skin
+pca ' ' 70h, 2
 
 g 7, 26
-pca ' ' 6eh, 2 ;hair
+pca ' ' 6eh, 2
 g 7, 28
-pca ' ' 70h, 2 ;skin
+pca ' ' 70h, 2
 g 7, 30
-pca ' ' 6eh, 2 ;hair
+pca ' ' 6eh, 2
 g 7, 32
-pca ' ' 70h, 8 ;skin
+pca ' ' 70h, 8
 g 7, 42
-pca ' ' 70h, 6 ;skin
+pca ' ' 70h, 6
 
 g 8, 26
-pca ' ' 6eh, 2 ;hair
+pca ' ' 6eh, 2
 g 8, 28
-pca ' ' 70h, 2 ;skin
+pca ' ' 70h, 2
 g 8, 30
-pca ' ' 6eh, 4 ;hair
+pca ' ' 6eh, 4
 g 8, 34
-pca ' ' 70h, 8 ;skin
+pca ' ' 70h, 8
 g 8, 44
-pca ' ' 70h, 6 ;skin
+pca ' ' 70h, 6
 
 g 9, 26
-pca ' ' 6eh, 4 ;hair
+pca ' ' 6eh, 4
 g 9, 30
-pca ' ' 70h, 10 ;skin
+pca ' ' 70h, 10
 
 g 10, 30
-pca ' ' 70h, 16 ;skin
+pca ' ' 70h, 16
 
 g 11, 28
-pca ' ' 4eh, 4 ;Shirt
+pca ' ' 4eh, 4
 g 11, 32
-pca ' ' 14h, 2 ;Vest
+pca ' ' 14h, 2
 g 11, 34
-pca ' ' 4eh, 8 ;Shirt
+pca ' ' 4eh, 8
 
 g 12, 26
-pca ' ' 4eh, 6 ;Shirt
+pca ' ' 4eh, 6
 g 12, 32
-pca ' ' 14h, 2 ;Vest
+pca ' ' 14h, 2
 g 12, 34
-pca ' ' 4eh, 4 ;Shirt
+pca ' ' 4eh, 4
 g 12, 38
-pca ' ' 14h, 2 ;Vest
+pca ' ' 14h, 2
 g 12, 40
-pca ' ' 4eh, 6 ;Shirt
+pca ' ' 4eh, 6
 
 g 13, 24
-pca ' ' 4eh, 8 ;Shirt
+pca ' ' 4eh, 8
 g 13, 32
-pca ' ' 14h, 8 ;Vest
+pca ' ' 14h, 8
 g 13, 40
-pca ' ' 4eh, 8 ;Shirt
+pca ' ' 4eh, 8
 
 g 14, 24
-pca ' ' 70h, 4 ;skin
+pca ' ' 70h, 4
 g 14, 28
-pca ' ' 4eh, 2 ;Shirt
+pca ' ' 4eh, 2
 g 14, 30
-pca ' ' 14h, 2 ;Vest
+pca ' ' 14h, 2
 g 14, 32
-pca ' ' 20h, 2 ;Button
+pca ' ' 20h, 2
 g 14, 34
-pca ' ' 14h, 4 ;Vest
+pca ' ' 14h, 4
 g 14, 38
-pca ' ' 20h, 2 ;Button
+pca ' ' 20h, 2
 g 14, 40
-pca ' ' 14h, 2 ;Vest
+pca ' ' 14h, 2
 g 14, 42
-pca ' ' 4eh, 2 ;Shirt
+pca ' ' 4eh, 2
 g 14, 44
-pca ' ' 70h, 4 ;Skin
+pca ' ' 70h, 4
 
 g 15, 24
-pca ' ' 70h, 6 ;Skin
+pca ' ' 70h, 6
 g 15, 30
-pca ' ' 14h, 12 ;Vest
+pca ' ' 14h, 12
 g 15, 42
-pca ' ' 70h, 6 ;Skin
+pca ' ' 70h, 6
 
 g 16, 24
-pca ' ' 70h, 4 ;Skin
+pca ' ' 70h, 4
 g 16, 28
-pca ' ' 14h, 16 ;Vest
+pca ' ' 14h, 16
 g 16, 44
-pca ' ' 70h, 4 ;Skin
+pca ' ' 70h, 4
 
 g 17, 28
 pca ' ' 14h, 6
@@ -182,9 +182,6 @@ pca '=' 8dh, 9
 g 22, 24
 pca ' ' 20h, 24
 
-;/////////////////////////////////////////
-
-;//////HAIR\\\\\\
 g 0,0 ;y,x
 pca '/',15,1
 
@@ -258,15 +255,11 @@ pca '|',15,5
 g 8, 19
 pca '|',15,5
 
-;//////BROWS\\\\\\
-
 g 3,7
 pca '\', 15,4
 
 g 3, 13
 pca '/', 15,4
-
-;//////EYES\\\\\\
 
 g 4,8
 pca '(', 8Dh,1
