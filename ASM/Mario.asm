@@ -150,19 +150,19 @@ g 20, 24
 pca ' ' 20h, 24
 
 g 21, 24
-pca '=' 8dh, 10
+pca '=' 0f0h, 10
 g 21, 34
-pca 'M' 8dh, 1
+pca 'M' 84h, 1
 g 21, 35
-pca 'A' 8dh, 1
+pca 'A' 82h, 1
 g 21, 36
-pca 'R' 8dh, 1
+pca 'R' 8Eh, 1
 g 21, 37
-pca 'I' 8dh, 1
+pca 'I' 81h, 1
 g 21, 38
-pca 'O' 8dh, 1
+pca 'O' 82h, 1
 g 21, 39
-pca '=' 8dh, 9
+pca '=' 0F0h, 9
 
 g 22, 24
 pca ' ' 20h, 24

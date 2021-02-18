@@ -165,19 +165,19 @@ g 20, 24
 pca ' ' 20h, 24
 
 g 21, 24
-pca '=' 8dh, 10
+pca '=' 95h, 10
 g 21, 34
-pca 'M' 8dh, 1
+pca 'M' 84h, 1
 g 21, 35
-pca 'A' 8dh, 1
+pca 'A' 82h, 1
 g 21, 36
-pca 'R' 8dh, 1
+pca 'R' 8Eh, 1
 g 21, 37
-pca 'I' 8dh, 1
+pca 'I' 81h, 1
 g 21, 38
-pca 'O' 8dh, 1
+pca 'O' 82h, 1
 g 21, 39
-pca '=' 8dh, 9
+pca '=' 9eh, 9
 
 g 22, 24
 pca ' ' 20h, 24
@@ -262,16 +262,16 @@ g 3, 13
 pca '/', 15,4
 
 g 4,8
-pca '(', 8Dh,1
+pca '(', 8dh,1
 g 4,9
-pca 'I', 8Dh,1
+pca 'I', 8dh,1
 g 4,10
-pca ')', 8Dh,1
+pca ')', 8dh,1
 
 g 4, 13
 pca '(', 8dh,1
 g 4, 14
-pca 'I', 8Dh,1
+pca 'I', 8dh,1
 g 4, 15
 pca ')', 8dh,1
 

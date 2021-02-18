@@ -1,7 +1,7 @@
-g macro r,c
+g macro y,x
 mov ah,02
-mov dh,r
-mov dl,c
+mov dh,y
+mov dl,x
 int 10h
 endm
 
@@ -25,8 +25,16 @@ end start
 endm
 
 data segment
-text1 db "\_________$"
+text1 db "\_______$"
 data ends
+
+s macro d, t
+mov ax,d
+mov ds,ax
+LEA DX,t
+mov ah,09h
+int 21h
+endm
 
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
@@ -34,16 +42,9 @@ org 100h
 start:
 cls
 
+g 7,7
+s data, text1
 
-mov ah,02;gotoxy
-mov dh,7
-mov dl,7
-int 10h
-mov ax,data
-mov ds,ax
-LEA DX,text1
-mov ah,09h
-int 21h
 
 ;//////HAIR\\\\\\
 g 0,0 ;y,x
@@ -63,7 +64,6 @@ pca 'X',15,4
 
 g 0,23
 pca '\',15,1
-
 
 g 1,0 ;y,x
 pca '/',15,1
