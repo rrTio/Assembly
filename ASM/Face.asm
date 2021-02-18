@@ -45,7 +45,6 @@ cls
 g 7,7
 s data, text1
 
-
 ;//////HAIR\\\\\\
 g 0,0 ;y,x
 pca '/',15,1

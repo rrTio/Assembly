@@ -1,3 +1,8 @@
+data segment
+text1 db "\________$"
+text2 db "ROZS RAVEN TIO$"
+data ends
+
 g macro r,c
 mov ah,02
 mov dh,r
@@ -13,6 +18,14 @@ mov cx,p
 int 10h
 endm
 
+s macro t
+mov ax,data
+mov ds,ax
+LEA DX,t
+mov ah,09h
+int 21h
+endm
+
 cls macro
 mov ax,0003h
 int 10h
@@ -24,265 +37,247 @@ cseg ends
 end start
 endm
 
-data segment
-text1 db "\_________$"
-data ends
+eyes macro
+g 3, 45
+pca ' ' 0e5h, 2 ; eyes
+g 4, 45
+pca ' ' 0e5h, 2 ; eyes
+endm
 
-cseg segment para 'code'
-assume cs:cseg;ds:cseg;ss:cseg;es:cseg
-org 100h
-start:
-cls
+beard macro
+g 5, 47
+pca ' ' 0e5h, 2 ; beard
+g 6, 45
+pca ' ' 0e5h, 8 ; beard
+endm
 
-mov ah,02;gotoxy
-mov dh,7
-mov dl,7
-int 10h
-mov ax,data
-mov ds,ax
-LEA DX,text1
-mov ah,09h
-int 21h
+cap macro
+g 1, 35
+pca ' ' 4eh, 12 ;cap
+g 2, 33
+pca ' ' 4eh, 20 ;cap
+endm
 
+head macro
+g 3, 33
+pca ' ' 6eh, 6 ;hair
+g 3, 39
+pca ' ' 70h, 6 ;skin
+g 3, 47
+pca ' ' 70h, 2 ;skin
+g 4, 31
+pca ' ' 6eh, 2 ;hair
+g 4, 33
+pca ' ' 70h, 2 ;skin
+g 4, 35
+pca ' ' 6eh, 2 ;hair
+g 4, 37
+pca ' ' 70h, 8 ;skin
+g 4, 47
+pca ' ' 70h, 6 ;skin
+g 5, 31
+pca ' ' 6eh, 2 ;hair
+g 5, 33
+pca ' ' 70h, 2 ;skin
+g 5, 35
+pca ' ' 6eh, 4 ;hair
+g 5, 39
+pca ' ' 70h, 8 ;skin
+g 5, 49
+pca ' ' 70h, 6 ;skin
+g 6, 31
+pca ' ' 6eh, 4 ;hair
+g 6, 35
+pca ' ' 70h, 10 ;skin
+g 7, 35
+pca ' ' 70h, 16 ;skin
+endm
 
-g 4, 30
-pca ' ' 4eh, 12
-
-g 5, 28
-pca ' ' 4eh, 20
-
-g 6, 28
-pca ' ' 6eh, 6
-g 6, 34
-pca ' ' 70h, 6
-g 6, 42
-pca ' ' 70h, 2
-
-g 7, 26
-pca ' ' 6eh, 2
-g 7, 28
-pca ' ' 70h, 2
-g 7, 30
-pca ' ' 6eh, 2
-g 7, 32
-pca ' ' 70h, 8
-g 7, 42
-pca ' ' 70h, 6
-
-g 8, 26
-pca ' ' 6eh, 2
-g 8, 28
-pca ' ' 70h, 2
-g 8, 30
-pca ' ' 6eh, 4
-g 8, 34
-pca ' ' 70h, 8
-g 8, 44
-pca ' ' 70h, 6
-
-g 9, 26
-pca ' ' 6eh, 4
-g 9, 30
-pca ' ' 70h, 10
-
-g 10, 30
-pca ' ' 70h, 16
-
-g 11, 28
-pca ' ' 4eh, 4
-g 11, 32
-pca ' ' 14h, 2
-g 11, 34
-pca ' ' 4eh, 8
-
-g 12, 26
-pca ' ' 4eh, 6
-g 12, 32
-pca ' ' 14h, 2
-g 12, 34
-pca ' ' 4eh, 4
-g 12, 38
-pca ' ' 14h, 2
-g 12, 40
-pca ' ' 4eh, 6
-
-g 13, 24
-pca ' ' 4eh, 8
-g 13, 32
-pca ' ' 14h, 8
-g 13, 40
-pca ' ' 4eh, 8
-
-g 14, 24
-pca ' ' 70h, 4
-g 14, 28
-pca ' ' 4eh, 2
-g 14, 30
-pca ' ' 14h, 2
-g 14, 32
-pca ' ' 20h, 2
-g 14, 34
-pca ' ' 14h, 4
-g 14, 38
-pca ' ' 20h, 2
-g 14, 40
-pca ' ' 14h, 2
-g 14, 42
-pca ' ' 4eh, 2
-g 14, 44
-pca ' ' 70h, 4
-
-g 15, 24
-pca ' ' 70h, 6
-g 15, 30
-pca ' ' 14h, 12
-g 15, 42
-pca ' ' 70h, 6
-
-g 16, 24
-pca ' ' 70h, 4
-g 16, 28
-pca ' ' 14h, 16
-g 16, 44
-pca ' ' 70h, 4
-
-g 17, 28
+body macro
+g 8, 33
+pca ' ' 4eh, 4 ;Shirt
+g 8, 37
+pca ' ' 14h, 2 ;Vest
+g 8, 39
+pca ' ' 4eh, 8 ;Shirt
+g 9, 31
+pca ' ' 4eh, 6 ;Shirt
+g 9, 37
+pca ' ' 14h, 2 ;Vest
+g 9, 39
+pca ' ' 4eh, 4 ;Shirt
+g 9, 43
+pca ' ' 14h, 2 ;Vest
+g 9, 45
+pca ' ' 4eh, 6 ;Shirt
+g 10, 29
+pca ' ' 4eh, 8 ;Shirt
+g 10, 37
+pca ' ' 14h, 8 ;Vest
+g 10, 45
+pca ' ' 4eh, 8 ;Shirt
+g 11, 29
+pca ' ' 70h, 4 ;skin
+g 11, 33
+pca ' ' 4eh, 2 ;Shirt
+g 11, 35
+pca ' ' 14h, 2 ;Vest
+g 11, 37
+pca ' ' 0A0h, 2 ;Button
+g 11, 39
+pca ' ' 14h, 4 ;Vest
+g 11, 43
+pca ' ' 0A0h, 2 ;Button
+g 11, 45
+pca ' ' 14h, 2 ;Vest
+g 11, 47
+pca ' ' 4eh, 2 ;Shirt
+g 11, 49
+pca ' ' 70h, 4 ;Skin
+g 12, 29
+pca ' ' 70h, 6 ;Skin
+g 12, 35
+pca ' ' 14h, 12 ;Vest
+g 12, 47
+pca ' ' 70h, 6 ;Skin
+g 13, 29
+pca ' ' 70h, 4 ;Skin
+g 13, 33
+pca ' ' 14h, 16 ;Vest
+g 13, 49
+pca ' ' 70h, 4 ;Skin
+g 14, 33
 pca ' ' 14h, 6
-g 17, 38
+g 14, 43
 pca ' ' 14h, 6
+endm
 
-g 18, 26
+feet macro
+g 15, 31
 pca ' ' 6eh, 6
+g 15, 45
+pca ' ' 6eh, 6
+
+g 16, 29
+pca '_' 6eh, 8
+g 16, 45
+pca '_' 6eh, 8
+endm
+
+pipe macro
+g 17, 29
+pca ' ' 20h, 24
+g 18, 29
+pca '=' 0f0h, 10
+g 18, 39
+pca 'M' 0f4h, 1
 g 18, 40
-pca ' ' 6eh, 6
-
-g 19, 24
-pca ' ' 6eh, 8
-g 19, 40
-pca ' ' 6eh, 8
-
-g 20, 24
+pca 'A' 0f2h, 1
+g 18, 41
+pca 'R' 0fEh, 1
+g 18, 42
+pca 'I' 0f1h, 1
+g 18, 43
+pca 'O' 0f2h, 1
+g 18, 44
+pca '=' 0F0h, 9
+g 19, 29
 pca ' ' 20h, 24
+g 20, 31
+pca '\' 02h, 1
+g 20, 32
+pca ' ' 80h, 18
+g 20, 50
+pca '/' 02h, 1
+g 21, 32
+pca ' ' 20h, 18
+g 22, 32
+pca ' ' 20h, 18
+g 23, 32
+pca ' ' 20h, 18
+g 24, 32
+pca ' ' 20h, 18
+endm
 
-g 21, 24
-pca '=' 95h, 10
-g 21, 34
-pca 'M' 84h, 1
-g 21, 35
-pca 'A' 82h, 1
-g 21, 36
-pca 'R' 8Eh, 1
-g 21, 37
-pca 'I' 81h, 1
-g 21, 38
-pca 'O' 82h, 1
-g 21, 39
-pca '=' 9eh, 9
-
-g 22, 24
-pca ' ' 20h, 24
-
+me macro
 g 0,0 ;y,x
 pca '/',15,1
-
 g 0,1
-pca 'X',15,4
-
+pca '@',15,4
 g 0,5
 pca '\',15,6
-
+g 0, 11
+pca 'w',15,2
 g 0,13
 pca '/',15,7
-
 g 0,19
-pca 'X',15,4
-
+pca '@',15,4
 g 0,23
 pca '\',15,1
-
-
 g 1,0 ;y,x
 pca '/',15,1
-
 g 1,1
-pca 'X',15,4
-
+pca '@',15,4
 g 1,5
 pca '\',15,7
-
 g 1,12
 pca '/',15,7
-
 g 1,19
-pca 'X',15,4
-
+pca '@',15,4
 g 1,23
 pca '\',15,1
-
-
 g 2, 0
-pca '|',15,5
+pca '/',15,5
 g 2, 19
-pca '|',15,5
-
+pca '\',15,5
 g 3, 0
-pca '|',15,5
+pca '\',15,5
 g 3, 19
-pca '|',15,5
-
+pca '/',15,5
 g 4, 0
-pca '|',15,5
+pca '/',15,5
 g 4, 19
-pca '|',15,5
-
+pca '\',15,5
 g 5, 0
-pca '|',15,5
+pca '\',15,5
 g 5, 19
-pca '|',15,5
-
+pca '/',15,5
 g 6, 0
-pca '|',15,5
+pca '/',15,5
 g 6, 19
-pca '|',15,5
-
+pca '\',15,5
 g 7, 0
-pca '|',15,5
+pca '(',15,5
 g 7, 19
-pca '|',15,5
-
+pca ')',15,5
 g 8, 0
-pca '|',15,5
+pca ')',15,5
 g 8, 19
-pca '|',15,5
-
+pca '(',15,5
 g 3,7
 pca '\', 15,4
-
 g 3, 13
 pca '/', 15,4
-
 g 4,8
-pca '(', 8dh,1
+pca '(', 84h,1
 g 4,9
-pca 'I', 8dh,1
+pca '@', 84h,1
 g 4,10
-pca ')', 8dh,1
-
+pca ')', 84h,1
 g 4, 13
-pca '(', 8dh,1
+pca '(', 84h,1
 g 4, 14
-pca 'I', 8dh,1
+pca '@', 84h,1
 g 4, 15
-pca ')', 8dh,1
-
+pca ')', 84h,1
 g 5, 12
 pca '\', 15,1
-
+g 7, 7
+s text1
 g 8, 18
 pca '/', 15,1
 g 8, 5
 pca '\', 15,1
-
 g 9, 17
 pca '/', 15,1
 g 9, 6
@@ -290,5 +285,25 @@ pca '\', 15,1
 g 9, 7
 pca '_', 15,10
 
+g 10, 5
+s text2
+endm
 
+mario macro
+eyes
+beard
+cap
+head
+body
+feet
+endm
+
+cseg segment para 'code'
+assume cs:cseg
+org 100h
+start:
+cls
+mario
+pipe
+me
 exit

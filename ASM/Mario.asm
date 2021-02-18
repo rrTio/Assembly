@@ -30,141 +30,163 @@ org 100h
 start:
 cls
 
-g 4, 30
+g 1, 30
 pca ' ' 4eh, 12 ;cap
 
-g 5, 28
+g 2, 28
 pca ' ' 4eh, 20 ;cap
 
-g 6, 28
+g 3, 28
 pca ' ' 6eh, 6 ;hair
-g 6, 34
+g 3, 34
 pca ' ' 70h, 6 ;skin
-g 6, 42
+g 3, 41
+pca ' ' 07h, 1
+g 3, 42
 pca ' ' 70h, 2 ;skin
 
-g 7, 26
+g 4, 26
 pca ' ' 6eh, 2 ;hair
-g 7, 28
+g 4, 28
 pca ' ' 70h, 2 ;skin
-g 7, 30
+g 4, 30
 pca ' ' 6eh, 2 ;hair
-g 7, 32
+g 4, 32
 pca ' ' 70h, 8 ;skin
-g 7, 42
+g 4, 42
 pca ' ' 70h, 6 ;skin
 
-g 8, 26
+g 5, 26
 pca ' ' 6eh, 2 ;hair
-g 8, 28
+g 5, 28
 pca ' ' 70h, 2 ;skin
-g 8, 30
+g 5, 30
 pca ' ' 6eh, 4 ;hair
-g 8, 34
+g 5, 34
 pca ' ' 70h, 8 ;skin
-g 8, 44
+g 5, 44
 pca ' ' 70h, 6 ;skin
 
-g 9, 26
+g 6, 26
 pca ' ' 6eh, 4 ;hair
-g 9, 30
+g 6, 30
 pca ' ' 70h, 10 ;skin
 
-g 10, 30
+g 7, 30
 pca ' ' 70h, 16 ;skin
 
-g 11, 28
+g 8, 28
 pca ' ' 4eh, 4 ;Shirt
-g 11, 32
+g 8, 32
 pca ' ' 14h, 2 ;Vest
-g 11, 34
+g 8, 34
 pca ' ' 4eh, 8 ;Shirt
 
-g 12, 26
+g 9, 26
 pca ' ' 4eh, 6 ;Shirt
-g 12, 32
+g 9, 32
 pca ' ' 14h, 2 ;Vest
-g 12, 34
+g 9, 34
 pca ' ' 4eh, 4 ;Shirt
-g 12, 38
+g 9, 38
 pca ' ' 14h, 2 ;Vest
-g 12, 40
+g 9, 40
 pca ' ' 4eh, 6 ;Shirt
+
+g 10, 24
+pca ' ' 4eh, 8 ;Shirt
+g 10, 32
+pca ' ' 14h, 8 ;Vest
+g 10, 40
+pca ' ' 4eh, 8 ;Shirt
+
+g 11, 24
+pca ' ' 70h, 4 ;skin
+g 11, 28
+pca ' ' 4eh, 2 ;Shirt
+g 11, 30
+pca ' ' 14h, 2 ;Vest
+g 11, 32
+pca ' ' 0A0h, 2 ;Button
+g 11, 34
+pca ' ' 14h, 4 ;Vest
+g 11, 38
+pca ' ' 0A0h, 2 ;Button
+g 11, 40
+pca ' ' 14h, 2 ;Vest
+g 11, 42
+pca ' ' 4eh, 2 ;Shirt
+g 11, 44
+pca ' ' 70h, 4 ;Skin
+
+g 12, 24
+pca ' ' 70h, 6 ;Skin
+g 12, 30
+pca ' ' 14h, 12 ;Vest
+g 12, 42
+pca ' ' 70h, 6 ;Skin
 
 g 13, 24
-pca ' ' 4eh, 8 ;Shirt
-g 13, 32
-pca ' ' 14h, 8 ;Vest
-g 13, 40
-pca ' ' 4eh, 8 ;Shirt
-
-g 14, 24
-pca ' ' 70h, 4 ;skin
-g 14, 28
-pca ' ' 4eh, 2 ;Shirt
-g 14, 30
-pca ' ' 14h, 2 ;Vest
-g 14, 32
-pca ' ' 20h, 2 ;Button
-g 14, 34
-pca ' ' 14h, 4 ;Vest
-g 14, 38
-pca ' ' 20h, 2 ;Button
-g 14, 40
-pca ' ' 14h, 2 ;Vest
-g 14, 42
-pca ' ' 4eh, 2 ;Shirt
-g 14, 44
+pca ' ' 70h, 4 ;Skin
+g 13, 28
+pca ' ' 14h, 16 ;Vest
+g 13, 44
 pca ' ' 70h, 4 ;Skin
 
-g 15, 24
-pca ' ' 70h, 6 ;Skin
-g 15, 30
-pca ' ' 14h, 12 ;Vest
-g 15, 42
-pca ' ' 70h, 6 ;Skin
+g 14, 28
+pca ' ' 14h, 6
+g 14, 38
+pca ' ' 14h, 6
+
+g 15, 26
+pca ' ' 6eh, 6
+g 15, 40
+pca ' ' 6eh, 6
 
 g 16, 24
-pca ' ' 70h, 4 ;Skin
-g 16, 28
-pca ' ' 14h, 16 ;Vest
-g 16, 44
-pca ' ' 70h, 4 ;Skin
-
-g 17, 28
-pca ' ' 14h, 6
-g 17, 38
-pca ' ' 14h, 6
-
-g 18, 26
-pca ' ' 6eh, 6
-g 18, 40
-pca ' ' 6eh, 6
-
-g 19, 24
 pca ' ' 6eh, 8
-g 19, 40
+g 16, 40
 pca ' ' 6eh, 8
 
-g 20, 24
+g 17, 24
 pca ' ' 20h, 24
 
-g 21, 24
+g 18, 24
 pca '=' 0f0h, 10
-g 21, 34
+g 18, 34
 pca 'M' 84h, 1
-g 21, 35
+g 18, 35
 pca 'A' 82h, 1
-g 21, 36
+g 18, 36
 pca 'R' 8Eh, 1
-g 21, 37
+g 18, 37
 pca 'I' 81h, 1
-g 21, 38
+g 18, 38
 pca 'O' 82h, 1
-g 21, 39
+g 18, 39
 pca '=' 0F0h, 9
 
-g 22, 24
+g 19, 24
 pca ' ' 20h, 24
+
+g 20, 26
+pca '\' 02h, 1
+g 20, 27
+pca ' ' 80h, 18
+g 20, 45
+pca '/' 02h, 1
+
+g 21, 27
+pca ' ' 20h, 18
+
+g 22, 27
+pca ' ' 20h, 18
+
+g 23, 27
+pca ' ' 20h, 18
+
+g 24, 27
+pca ' ' 20h, 18
+
 
 exit
