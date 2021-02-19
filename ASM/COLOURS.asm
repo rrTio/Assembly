@@ -149,9 +149,10 @@ gotoxy 0,0
 print 'A', blue, 15
 
 gotoxy 1,0
-print 'A', blueOblack, 15
+print 'A', blueOblack, 26
 
-gotoxy 24,53
+gotoxy 23, 53
+print ' ', greenOblack, 26
 string text1
 
 exit

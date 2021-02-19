@@ -1,6 +1,6 @@
 data segment
 text1 db "\________$"
-text2 db "ROZS RAVEN TIO$"
+text2 db "CREATED BY: ROZS RAVEN TIO$"
 data ends
 
 g macro r,c
@@ -337,7 +337,8 @@ g 9, 7
 pca '_', 50h,10
 g 7, 7
 s text1
-g 10, 5
+g 24, 53
+pca ' ', 0DAh, 26
 s text2
 endm
 
