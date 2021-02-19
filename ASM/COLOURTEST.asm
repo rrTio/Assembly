@@ -1,5 +1,7 @@
 data segment
-text1 db 'CREATED BY: ROZS RAVEN TIO$'
+text1 db 'TEST 1: FOREGROUND COLOUR$'
+text2 db 'TEST 2: BACKGROUND COLOUR$'
+text3 db 'TEST 3: BLINKING TEXT$'
 data ends
 
 gotoxy macro y,x
@@ -100,7 +102,7 @@ blinkcyan macro
 mov bl, 83h
 endm
 blinkred macro
-mov bl, 084h
+mov bl, 84h
 endm
 blinkmagenta macro
 mov bl, 85h
@@ -186,7 +188,6 @@ white macro
 mov bl, 0F0h
 endm
 
-
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
@@ -195,16 +196,18 @@ clear
 
 ;format
 ;gotoxy yCoordinate, xCoordinate
-;print char, colour,repetition
+;print char, colour,repetition/number of characters(spaces included)
 
 gotoxy 0, 0
-printColour ' ', blinkred, 26
+printColour ' ', redOblack, 25
 string text1
 
 gotoxy 1,0
-print 'A', blue, 15
+print ' ', blue, 25
+string text2
 
 gotoxy 2,0
-print 'A', blinkgreen, 26
+print ' ', blinkgreen, 21
+string text3
 
 exit
