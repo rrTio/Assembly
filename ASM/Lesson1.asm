@@ -3,6 +3,7 @@ n1 db 'Juan Dela Cruz$'
 n2 db 'BSCPE$'
 n3 db '2nd Year Student$'
 data ends
+
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h

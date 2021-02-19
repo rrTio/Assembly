@@ -37,11 +37,64 @@ cseg ends
 end start
 endm
 
+background macro
+g 0,0
+pca ' ' 50h, 80
+g 1,0
+pca ' ' 50h, 80
+g 2,0
+pca ' ' 50h, 80
+g 3,0
+pca ' ' 50h, 80
+g 4,0
+pca ' ' 50h, 80
+g 5,0
+pca ' ' 50h, 80
+g 6,0
+pca ' ' 50h, 80
+g 7,0
+pca ' ' 50h, 80
+g 8,0
+pca ' ' 50h, 80
+g 9,0
+pca ' ' 50h, 80
+g 10,0
+pca ' ' 50h, 80
+g 11,0
+pca ' ' 50h, 80
+g 12,0
+pca ' ' 50h, 80
+g 13,0
+pca ' ' 50h, 80
+g 14,0
+pca ' ' 50h, 80
+g 15,0
+pca ' ' 50h, 80
+g 16,0
+pca ' ' 50h, 80
+g 17,0
+pca ' ' 50h, 80
+g 18,0
+pca ' ' 50h, 80
+g 19,0
+pca ' ' 50h, 80
+g 20,0
+pca ' ' 50h, 80
+g 21,0
+pca ' ' 50h, 80
+g 22,0
+pca ' ' 50h, 80
+g 23,0
+pca ' ' 50h, 80
+g 24,0
+pca ' ' 50h, 80
+endm
+
 eyes macro
 g 3, 45
-pca ' ' 0e5h, 2 ; eyes
+pca ' ' 005h, 2 ; eyes 0e5h
 g 4, 45
-pca ' ' 0e5h, 2 ; eyes
+pca ' ' 005h, 2 ; eyes
 endm
 
 beard macro
@@ -168,26 +221,26 @@ pipe macro
 g 17, 29
 pca ' ' 20h, 24
 g 18, 29
-pca '=' 0f0h, 10
+pca '=' 8Ah, 10
 g 18, 39
-pca 'M' 0f4h, 1
+pca 'M' 84h, 1
 g 18, 40
-pca 'A' 0f2h, 1
+pca 'A' 82h, 1
 g 18, 41
-pca 'R' 0fEh, 1
+pca 'R' 8Eh, 1
 g 18, 42
-pca 'I' 0f1h, 1
+pca 'I' 81h, 1
 g 18, 43
-pca 'O' 0f2h, 1
+pca 'O' 82h, 1
 g 18, 44
-pca '=' 0F0h, 9
+pca '=' 8Ah, 9
 g 19, 29
 pca ' ' 20h, 24
-g 20, 31
-pca '\' 02h, 1
 g 20, 32
 pca ' ' 80h, 18
-g 20, 50
+g 20, 32
+pca '\' 02h, 1
+g 20, 49
 pca '/' 02h, 1
 g 21, 32
 pca ' ' 20h, 18
@@ -201,63 +254,63 @@ endm
 
 me macro
 g 0,0 ;y,x
-pca '/',15,1
+pca '/',50h,1
 g 0,1
-pca '@',15,4
+pca '@',50h,4
 g 0,5
-pca '\',15,6
+pca '\',50h,6
 g 0, 11
-pca 'w',15,2
+pca 'w',50h,2
 g 0,13
-pca '/',15,7
+pca '/',50h,7
 g 0,19
-pca '@',15,4
+pca '@',50h,4
 g 0,23
-pca '\',15,1
+pca '\',50h,1
 g 1,0 ;y,x
-pca '/',15,1
+pca '/',50h,1
 g 1,1
-pca '@',15,4
+pca '@',50h,4
 g 1,5
-pca '\',15,7
+pca '\',50h,7
 g 1,12
-pca '/',15,7
+pca '/',50h,7
 g 1,19
-pca '@',15,4
+pca '@',50h,4
 g 1,23
-pca '\',15,1
+pca '\',50h,1
 g 2, 0
-pca '/',15,5
+pca '/',50h,5
 g 2, 19
-pca '\',15,5
+pca '\',50h,5
 g 3, 0
-pca '\',15,5
+pca '\',50h,5
 g 3, 19
-pca '/',15,5
+pca '/',50h,5
 g 4, 0
-pca '/',15,5
+pca '/',50h,5
 g 4, 19
-pca '\',15,5
+pca '\',50h,5
 g 5, 0
-pca '\',15,5
+pca '\',50h,5
 g 5, 19
-pca '/',15,5
+pca '/',50h,5
 g 6, 0
-pca '/',15,5
+pca '/',50h,5
 g 6, 19
-pca '\',15,5
+pca '\',50h,5
 g 7, 0
-pca '(',15,5
+pca '(',50h,5
 g 7, 19
-pca ')',15,5
+pca ')',50h,5
 g 8, 0
-pca ')',15,5
+pca ')',50h,5
 g 8, 19
-pca '(',15,5
+pca '(',50h,5
 g 3,7
-pca '\', 15,4
+pca '\', 50h,4
 g 3, 13
-pca '/', 15,4
+pca '/', 50h,4
 g 4,8
 pca '(', 84h,1
 g 4,9
@@ -271,20 +324,19 @@ pca '@', 84h,1
 g 4, 15
 pca ')', 84h,1
 g 5, 12
-pca '\', 15,1
+pca '\', 50h,1
+g 8, 18
+pca '/', 50h,1
+g 8, 5
+pca '\', 50h,1
+g 9, 17
+pca '/', 50h,1
+g 9, 6
+pca '\', 50h,1
+g 9, 7
+pca '_', 50h,10
 g 7, 7
 s text1
-g 8, 18
-pca '/', 15,1
-g 8, 5
-pca '\', 15,1
-g 9, 17
-pca '/', 15,1
-g 9, 6
-pca '\', 15,1
-g 9, 7
-pca '_', 15,10
-
 g 10, 5
 s text2
 endm
@@ -303,6 +355,7 @@ assume cs:cseg
 org 100h
 start:
 cls
+background
 mario
 pipe
 me
