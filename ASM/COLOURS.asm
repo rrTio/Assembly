@@ -1,5 +1,5 @@
 data segment
-
+text1 db 'CREATED BY: ROZS RAVEN TIO$'
 data ends
 
 gotoxy macro y,x
@@ -9,10 +9,10 @@ mov dl,x
 int 10h
 endm
 
-print macro char,colour,repetition
+print macro char,c,repetition
 mov ah,09
 mov al,char
-colour   ; Colour
+c   ; Colour
 mov cx,repetition
 int 10h
 endm
@@ -144,5 +144,14 @@ clear
 ;format
 ;gotoxy yCoordinate, xCoordinate
 ;print char, colour,repetition
+
+gotoxy 0,0
+print 'A', blue, 15
+
+gotoxy 1,0
+print 'A', blueOblack, 15
+
+gotoxy 24,53
+string text1
 
 exit
