@@ -8,15 +8,20 @@ mov dh,y
 mov dl,x
 int 10h
 endm
-
-print macro char,c,repetition
+print macro char,colour,repetition
+mov ah,09
+mov al,char
+colour   ; Colour
+mov cx,repetition
+int 10h
+endm
+printColour macro char,c,repetition
 mov ah,09
 mov al,char
 c   ; Colour
 mov cx,repetition
 int 10h
 endm
-
 string macro t
 mov ax,data
 mov ds,ax
@@ -24,18 +29,17 @@ LEA DX,t
 mov ah,09h
 int 21h
 endm
-
 clear macro
 mov ax,0003h
 int 10h
 endm
-
 exit macro
 int 20h
 cseg ends
 end start
 endm
-;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS/////////////////////////
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: BLACK
 blackOblack macro
 mov bl, 00h
 endm
@@ -85,7 +89,54 @@ whiteOblack macro
 mov bl, 0Fh
 endm
 
-;\\\\\\\\\\\\\\\\\\\\\\\\\BACKGROUND COLOURS/////////////////////////
+;\\\\\\\\\\\\\\\\\\\\\\\\\BLINKING FOREGROUND///////////////////////// DEFAULT BACKGROUND: BLACK
+blinkblue macro
+mov bl, 81h
+endm
+blinkgreen macro
+mov bl, 82h
+endm
+blinkcyan macro
+mov bl, 83h
+endm
+blinkred macro
+mov bl, 84h
+endm
+blinkmagenta macro
+mov bl, 85h
+endm
+blinkbrown macro
+mov bl, 86h
+endm
+blinklightgrey macro
+mov bl, 87h
+endm
+blinkdarkgrey macro
+mov bl, 88h
+endm
+blinklightblue macro
+mov bl, 89h
+endm
+blinklightgreen macro
+mov bl, 8Ah
+endm
+blinklightcyan macro
+mov bl, 8Bh
+endm
+blinklightred macro
+mov bl, 8Ch
+endm
+blinklightmagenta macro
+mov bl, 8Dh
+endm
+blinkyellow macro
+mov bl, 8Eh
+endm
+blinkwhite macro
+mov bl, 8Fh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\BACKGROUND COLOURS///////////////////////// DEFAULT FOREGROUND: BLACK
 black macro
 mov bl, 00h
 endm
@@ -135,6 +186,7 @@ white macro
 mov bl, 0F0h
 endm
 
+
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
@@ -145,14 +197,14 @@ clear
 ;gotoxy yCoordinate, xCoordinate
 ;print char, colour,repetition
 
-gotoxy 0,0
-print 'A', blue, 15
+gotoxy 0, 0
+printColour ' ', white, 26
+string text1
 
 gotoxy 1,0
-print 'A', blueOblack, 26
+print 'A', blue, 15
 
-gotoxy 23, 53
-print ' ', greenOblack, 26
-string text1
+gotoxy 2,0
+print 'A', blinkgreen, 26
 
 exit
