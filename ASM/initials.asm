@@ -243,7 +243,6 @@ start:
 clear
 background
 
-
 gotoxy 1,0
 print ' ', blue, 8
 gotoxy 2, 0

@@ -1,7 +1,3 @@
-data segment
-text1 db 'CREATED BY: ROZS RAVEN TIO$'
-data ends
-
 gotoxy macro y,x
 mov ah,02
 mov dh,y
@@ -186,25 +182,97 @@ white macro
 mov bl, 0F0h
 endm
 
-
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
 start:
 clear
 
-;format
-;gotoxy yCoordinate, xCoordinate
-;print char, colour,repetition
-
-gotoxy 0, 0
-printColour ' ', blinkred, 26
-string text1
-
 gotoxy 1,0
-print 'A', blue, 15
+print '@', blinkblue, 8
+gotoxy 2, 0
+print '@', blinkblue, 2
+gotoxy 2, 8
+print '@', blinkblue, 2
+gotoxy 3, 0
+print '@', blinkblue, 2
+gotoxy 3, 8
+print '@', blinkblue, 2
+gotoxy 4, 0
+print '@', blinkblue, 8
+gotoxy 5, 0
+print '@', blinkblue, 2
+gotoxy 5, 4
+print '@', blinkblue, 2
+gotoxy 6, 0
+print '@', blinkblue, 2
+gotoxy 6, 6
+print '@', blinkblue, 2
+gotoxy 7, 0
+print '@', blinkblue, 2
+gotoxy 7, 8
+print '@', blinkblue, 2
 
-gotoxy 2,0
-print 'A', blinkgreen, 26
+gotoxy 9,0
+print '@', blinkred, 8
+gotoxy 10, 0
+print '@', blinkred, 2
+gotoxy 10, 8
+print '@', blinkred, 2
+gotoxy 11, 0
+print '@', blinkred, 2
+gotoxy 11, 8
+print '@', blinkred, 2
+gotoxy 12, 0
+print '@', blinkred, 8
+gotoxy 13, 0
+print '@', blinkred, 2
+gotoxy 13, 4
+print '@', blinkred, 2
+gotoxy 14, 0
+print '@', blinkred, 2
+gotoxy 14, 6
+print '@', blinkred, 2
+gotoxy 15, 0
+print '@', blinkred, 2
+gotoxy 15, 8
+print '@', blinkred, 2
+
+gotoxy 1, 14
+print '@', blinkgreen, 6
+gotoxy 2, 12
+print '@', blinkgreen, 2
+gotoxy 2, 20
+print '@', blinkgreen, 2
+gotoxy 3, 12
+print '@', blinkgreen, 2
+gotoxy 4, 12
+print '@', blinkgreen, 2
+gotoxy 5, 12
+print '@', blinkgreen, 2
+gotoxy 5, 18
+print '@', blinkgreen, 4
+gotoxy 6, 12
+print '@', blinkgreen, 2
+gotoxy 6, 20
+print '@', blinkgreen, 2
+gotoxy 7, 14
+print '@', blinkgreen, 6
+
+gotoxy 9, 12
+print '@', blinkmagenta, 10
+gotoxy 10, 16
+print '@', blinkmagenta, 2
+gotoxy 11, 16
+print '@', blinkmagenta, 2
+gotoxy 12, 16
+print '@', blinkmagenta, 2
+gotoxy 13, 16
+print '@', blinkmagenta, 2
+gotoxy 14, 16
+print '@', blinkmagenta, 2
+gotoxy 15, 16
+print '@', blinkmagenta, 2
+
 
 exit
