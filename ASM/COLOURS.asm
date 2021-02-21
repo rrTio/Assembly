@@ -1,18 +1,12 @@
 data segment
-text1 db 'CREATED BY: ROZS RAVEN TIO$'
+text1 db 'COLOURS$'
+text2 db 'CREATED BY: ROZS RAVEN TIO$'
 data ends
 
 gotoxy macro y,x
 mov ah,02
 mov dh,y
 mov dl,x
-int 10h
-endm
-print macro char,colour,repetition
-mov ah,09
-mov al,char
-colour   ; Colour
-mov cx,repetition
 int 10h
 endm
 printColour macro char,c,repetition
@@ -339,101 +333,556 @@ whiteOmagenta macro
 mov bl, 5Fh
 endm
 
-;\\\\\\\\\\\\\\\\\\\\\\\\\BLINKING FOREGROUND///////////////////////// DEFAULT BACKGROUND: BLACK
-blinkblue macro
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: BROWN
+blackObrown macro
+mov bl, 60h
+endm
+blueObrown macro
+mov bl, 61h
+endm
+greenObrown macro
+mov bl, 62h
+endm
+cyanObrown macro
+mov bl, 63h
+endm
+redObrown macro
+mov bl, 64h
+endm
+magentaObrown macro
+mov bl, 65h
+endm
+brownObrown macro
+mov bl, 66h
+endm
+lightgreyObrown macro
+mov bl, 67h
+endm
+darkgreyObrown macro
+mov bl, 68h
+endm
+lightblueObrown macro
+mov bl, 69h
+endm
+lightgreenObrown macro
+mov bl, 6Ah
+endm
+lightcyanObrown macro
+mov bl, 6Bh
+endm
+lightredObrown macro
+mov bl, 6Ch
+endm
+lightmagentaObrown macro
+mov bl, 6Dh
+endm
+yellowObrown macro
+mov bl, 6Eh
+endm
+whiteObrown macro
+mov bl, 6Fh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT GREY
+blackOlightgrey macro
+mov bl, 70h
+endm
+blueOlightgrey macro
+mov bl, 71h
+endm
+greenOlightgrey macro
+mov bl, 72h
+endm
+cyanOlightgrey macro
+mov bl, 73h
+endm
+redOlightgrey macro
+mov bl, 74h
+endm
+magentaOlightgrey macro
+mov bl, 75h
+endm
+brownOlightgrey macro
+mov bl, 76h
+endm
+lightgreyOlightgrey macro
+mov bl, 77h
+endm
+darkgreyOlightgrey macro
+mov bl, 78h
+endm
+lightblueOlightgrey macro
+mov bl, 79h
+endm
+lightgreenOlightgrey macro
+mov bl, 7Ah
+endm
+lightcyanOlightgrey macro
+mov bl, 7Bh
+endm
+lightredOlightgrey macro
+mov bl, 7Ch
+endm
+lightmagentaOlightgrey macro
+mov bl, 7Dh
+endm
+yellowOlightgrey macro
+mov bl, 7Eh
+endm
+whiteOlightgrey macro
+mov bl, 7Fh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND BLINKING//////////////////////////////////////////////////
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: DARK GREY
+blackOdarkgrey macro
+mov bl, 80h
+endm
+blueOdarkgrey macro
 mov bl, 81h
 endm
-blinkgreen macro
+greenOdarkgrey macro
 mov bl, 82h
 endm
-blinkcyan macro
+cyanOdarkgrey macro
 mov bl, 83h
 endm
-blinkred macro
+redOdarkgrey macro
 mov bl, 84h
 endm
-blinkmagenta macro
+magentaOdarkgrey macro
 mov bl, 85h
 endm
-blinkbrown macro
+bronwOdarkgrey macro
 mov bl, 86h
 endm
-blinklightgrey macro
+lightgreyOdarkgrey macro
 mov bl, 87h
 endm
-blinkdarkgrey macro
+darkgreyOdarkgrey macro
 mov bl, 88h
 endm
-blinklightblue macro
+lightblueOdarkgrey macro
 mov bl, 89h
 endm
-blinklightgreen macro
+lightgreenOdarkgrey macro
 mov bl, 8Ah
 endm
-blinklightcyan macro
+lightcyanOdarkgrey macro
 mov bl, 8Bh
 endm
-blinklightred macro
+lightredOdarkgrey macro
 mov bl, 8Ch
 endm
-blinklightmagenta macro
+lightmagentaOdarkgrey macro
 mov bl, 8Dh
 endm
-blinkyellow macro
+yellowOdarkgrey macro
 mov bl, 8Eh
 endm
-blinkwhite macro
+whiteOdarkgrey macro
 mov bl, 8Fh
 endm
 
-;\\\\\\\\\\\\\\\\\\\\\\\\\BACKGROUND COLOURS///////////////////////// DEFAULT FOREGROUND: SAME AS BACKGROUND
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT BLUE
+blackOlightblue macro
+mov bl, 90h
+endm
+blueOlightblue macro
+mov bl, 91h
+endm
+greenOlightblue macro
+mov bl, 92h
+endm
+cyanOlightblue macro
+mov bl, 93h
+endm
+redOlightblue macro
+mov bl, 94h
+endm
+magentaOlightblue macro
+mov bl, 95h
+endm
+brownOlightblue macro
+mov bl, 96h
+endm
+lightgreyOlightblue macro
+mov bl, 97h
+endm
+darkgreyOlightblue macro
+mov bl, 98h
+endm
+lightblueOlightblue macro
+mov bl, 99h
+endm
+lightgreenOlightblue macro
+mov bl, 9Ah
+endm
+lightcyanOlightblue macro
+mov bl, 9Bh
+endm
+lightredOlightblue macro
+mov bl, 9Ch
+endm
+lightmagentaOlightblue macro
+mov bl, 9Dh
+endm
+yellowOlightblue macro
+mov bl, 9Eh
+endm
+whiteOlightblue macro
+mov bl, 9Fh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT GREEN
+blackOlightgreen macro
+mov bl, 0A0h
+endm
+blueOlightgreen macro
+mov bl, 0A1h
+endm
+greenOlightgreen macro
+mov bl, 0A2h
+endm
+cyanOlightgreen macro
+mov bl, 0A3h
+endm
+redOlightgreen macro
+mov bl, 0A4h
+endm
+magentaOlightgreen macro
+mov bl, 0A5h
+endm
+brownOlightgreen macro
+mov bl, 0A6h
+endm
+lightgreyOlightgreen macro
+mov bl, 0A7h
+endm
+darkgreyOlightgreen macro
+mov bl, 0A8h
+endm
+lightblueOlightgreen macro
+mov bl, 0A9h
+endm
+lightgreenOlightgreen macro
+mov bl, 0AAh
+endm
+lightcyanOlightgreen macro
+mov bl, 0ABh
+endm
+lightredOlightgreen macro
+mov bl, 0ACh
+endm
+lightmagentaOlightgreen macro
+mov bl, 0ADh
+endm
+yellowOlightgreen macro
+mov bl, 0AEh
+endm
+whiteOlightgreen macro
+mov bl, 0AFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT CYAN
+blackOlightcyan macro
+mov bl, 0B0h
+endm
+blueOlightcyan macro
+mov bl, 0B1h
+endm
+greenOlightcyan macro
+mov bl, 0B2h
+endm
+cyanOlightcyan macro
+mov bl, 0B3h
+endm
+redOlightcyan macro
+mov bl, 0B4h
+endm
+magentaOlightcyan macro
+mov bl, 0B5h
+endm
+brownOlightcyan macro
+mov bl, 0B6h
+endm
+lightgreyOlightcyan macro
+mov bl, 0B7h
+endm
+darkgreyOlightcyan macro
+mov bl, 0B8h
+endm
+lightblueOlightcyan macro
+mov bl, 0B9h
+endm
+lightgreenOlightcyan macro
+mov bl, 0BAh
+endm
+lightcyanOlightcyan macro
+mov bl, 0BBh
+endm
+lightredOlightcyan macro
+mov bl, 0BCh
+endm
+lightmagentaOlightcyan macro
+mov bl, 0BDh
+endm
+yellowOlightcyan macro
+mov bl, 0BEh
+endm
+whiteOlightcyan macro
+mov bl, 0BFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT RED
+blackOlightred macro
+mov bl, 0C0h
+endm
+blueOlightred macro
+mov bl, 0C1h
+endm
+greenOlightred macro
+mov bl, 0C2h
+endm
+cyanOlightred macro
+mov bl, 0C3h
+endm
+redOlightred macro
+mov bl, 0C4h
+endm
+magentaOlightred macro
+mov bl, 0C5h
+endm
+brownOlightred macro
+mov bl, 0C6h
+endm
+lightgreyOlightred macro
+mov bl, 0C7h
+endm
+darkgreyOlightred macro
+mov bl, 0C8h
+endm
+lightblueOlightred macro
+mov bl, 0C9h
+endm
+lightgreenOlightred macro
+mov bl, 0CAh
+endm
+lightcyanOlightred macro
+mov bl, 0CBh
+endm
+lightredOlightred macro
+mov bl, 0CCh
+endm
+lightmagentaOlightred macro
+mov bl, 0CDh
+endm
+yellowOlightred macro
+mov bl, 0CEh
+endm
+whiteOlightred macro
+mov bl, 0CFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: LIGHT MAGENTA
+blackOlightmagenta macro
+mov bl, 0D0h
+endm
+blueOlightmagenta macro
+mov bl, 0D1h
+endm
+greenOlightmagenta macro
+mov bl, 0D2h
+endm
+cyanOlightmagenta macro
+mov bl, 0D3h
+endm
+redOlightmagenta macro
+mov bl, 0D4h
+endm
+magentaOlightmagenta macro
+mov bl, 0D5h
+endm
+brownOlightmagenta macro
+mov bl, 0D6h
+endm
+lightgreyOlightmagenta macro
+mov bl, 0D7h
+endm
+darkgreyOlightmagenta macro
+mov bl, 0D8h
+endm
+lightblueOlightmagenta macro
+mov bl, 0D9h
+endm
+lightgreenOlightmagenta macro
+mov bl, 0DAh
+endm
+lightcyanOlightmagenta macro
+mov bl, 0DBh
+endm
+lightredOlightmagenta macro
+mov bl, 0DCh
+endm
+lightmagentaOlightmagenta macro
+mov bl, 0DDh
+endm
+yellowOlightmagenta macro
+mov bl, 0DEh
+endm
+whiteOlightmagenta macro
+mov bl, 0DFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: YELLOW
+blackOyellow macro
+mov bl, 0E0h
+endm
+blueOyellow macro
+mov bl, 0E1h
+endm
+greenOyellow macro
+mov bl, 0E2h
+endm
+cyanOyellow macro
+mov bl, 0E3h
+endm
+redOyellow macro
+mov bl, 0E4h
+endm
+magentaOyellow macro
+mov bl, 0E5h
+endm
+brownOyellow macro
+mov bl, 0E6h
+endm
+lightgreyOyellow macro
+mov bl, 0E7h
+endm
+darkgreyOyellow macro
+mov bl, 0E8h
+endm
+lightblueOyellow macro
+mov bl, 0E9h
+endm
+lightgreenOyellow macro
+mov bl, 0EAh
+endm
+lightcyanOyellow macro
+mov bl, 0EBh
+endm
+lightredOyellow macro
+mov bl, 0ECh
+endm
+lightmagentaOyellow macro
+mov bl, 0EDh
+endm
+yellowOyellow macro
+mov bl, 0EEh
+endm
+whiteOyellow macro
+mov bl, 0EFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: WHITE
+blackOwhite macro
+mov bl, 0F0h
+endm
+blueOwhite macro
+mov bl, 0F1h
+endm
+greenOwhite macro
+mov bl, 0F2h
+endm
+cyanOwhite macro
+mov bl, 0F3h
+endm
+redOwhite macro
+mov bl, 0F4h
+endm
+magentaOwhite macro
+mov bl, 0F5h
+endm
+brownOwhite macro
+mov bl, 0F6h
+endm
+lightgreyOwhite macro
+mov bl, 0F7h
+endm
+darkgreyOwhite macro
+mov bl, 0F8h
+endm
+lightblueOwhite macro
+mov bl, 0F9h
+endm
+lightgreenOwhite macro
+mov bl, 0FAh
+endm
+lightcyanOwhite macro
+mov bl, 0FBh
+endm
+lightredOwhite macro
+mov bl, 0FCh
+endm
+lightmagentaOwhite macro
+mov bl, 0FDh
+endm
+yellowOwhite macro
+mov bl, 0FEh
+endm
+whiteOwhite macro
+mov bl, 0FFh
+endm
+
+;\\\\\\\\\\\\\\\\\\\\\\\\\BACKGROUND COLOURS///////////////////////// DEFAULT FOREGROUND: BLACK
 black macro
 mov bl, 00h
 endm
 blue macro
-mov bl, 11h
+mov bl, 10h
 endm
 green macro
-mov bl, 22h
+mov bl, 20h
 endm
 cyan macro
-mov bl, 33h
+mov bl, 30h
 endm
 red macro
-mov bl, 44h
+mov bl, 40h
 endm
 magenta macro
-mov bl, 55h
+mov bl, 50h
 endm
 brown macro
-mov bl, 66h
+mov bl, 60h
 endm
 lightgrey macro
-mov bl, 77h
+mov bl, 70h
 endm
 darkgrey macro
-mov bl, 88h
+mov bl, 80h
 endm
 lightblue macro
-mov bl, 99h
+mov bl, 90h
 endm
 lightgreen macro
-mov bl, 0AAh
+mov bl, 0A0h
 endm
 lightcyan macro
-mov bl, 0BBh
+mov bl, 0B0h
 endm
 lightred macro
-mov bl, 0CCh
+mov bl, 0C0h
 endm
 lightmagenta macro
-mov bl, 0DDh
+mov bl, 0D0h
 endm
 yellow macro
-mov bl, 0EEh
+mov bl, 0E0h
 endm
 white macro
-mov bl, 0FFh
+mov bl, 0F0h
 endm
 
 
@@ -447,8 +896,12 @@ clear
 ;gotoxy yCoordinate, xCoordinate
 ;print char, colour,repetition
 
-gotoxy 0, 0
-printColour ' ', yellowOblack, 26
+gotoxy 0, 34
+printColour ' ', yellowOblue, 7
 string text1
+
+gotoxy 24, 53
+printColour ' ', whiteOlightmagenta, 26
+string text2
 
 exit
