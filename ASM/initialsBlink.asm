@@ -274,5 +274,4 @@ print '@', blinkmagenta, 2
 gotoxy 15, 16
 print '@', blinkmagenta, 2
 
-
 exit
