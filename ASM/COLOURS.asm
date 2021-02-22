@@ -885,7 +885,6 @@ white macro
 mov bl, 0F0h
 endm
 
-
 cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
