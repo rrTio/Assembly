@@ -160,7 +160,7 @@ gotoxy 8, 30
 string text3
 gotoxy 9, 30
 string text4
-gotoxy 10, 30
+gotoxy 10, 30R
 string text5
 gotoxy 11, 30
 string text6
