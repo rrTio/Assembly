@@ -1,6 +1,6 @@
 data segment
-text1 db 'COLOURS$'
-text2 db 'CREATED BY: ROZS RAVEN TIO$'
+text1 db 'STRING0$'
+text2 db 'STRING1$'
 data ends
 
 gotoxy macro y,x
@@ -885,22 +885,99 @@ white macro
 mov bl, 0F0h
 endm
 
-cseg segment para 'code'
-assume cs:cseg;ds:cseg;ss:cseg;es:cseg
-org 100h
-start:
-clear
+;\\\\\\\\\\\\\\\\\\\\\\\\\BLINKING FOREGROUND///////////////////////// DEFAULT BACKGROUND: BLACK
+blinkblue macro
+mov bl, 81h
+endm
+blinkgreen macro
+mov bl, 82h
+endm
+blinkcyan macro
+mov bl, 83h
+endm
+blinkred macro
+mov bl, 84h
+endm
+blinkmagenta macro
+mov bl, 85h
+endm
+blinkbrown macro
+mov bl, 86h
+endm
+blinklightgrey macro
+mov bl, 87h
+endm
+blinkdarkgrey macro
+mov bl, 88h
+endm
+blinklightblue macro
+mov bl, 89h
+endm
+blinklightgreen macro
+mov bl, 8Ah
+endm
+blinklightcyan macro
+mov bl, 8Bh
+endm
+blinklightred macro
+mov bl, 8Ch
+endm
+blinklightmagenta macro
+mov bl, 8Dh
+endm
+blinkyellow macro
+mov bl, 8Eh
+endm
+blinkwhite macro
+mov bl, 8Fh
+endm
 
-;format
-;gotoxy yCoordinate, xCoordinate
-;print char, colour,repetition
-
-gotoxy 0, 34
-printColour ' ', yellowOblue, 7
-string text1
-
-gotoxy 24, 53
-printColour ' ', whiteOlightmagenta, 26
-string text2
-
-exit
+;\\\\\\\\\\\\\\\\\\\\\\\\\BACKGROUND COLOURS///////////////////////// DEFAULT FOREGROUND: BLACK
+black macro
+mov bl, 00h
+endm
+blue macro
+mov bl, 10h
+endm
+green macro
+mov bl, 20h
+endm
+cyan macro
+mov bl, 30h
+endm
+red macro
+mov bl, 40h
+endm
+magenta macro
+mov bl, 50h
+endm
+brown macro
+mov bl, 60h
+endm
+lightgrey macro
+mov bl, 70h
+endm
+darkgrey macro
+mov bl, 80h
+endm
+lightblue macro
+mov bl, 90h
+endm
+lightgreen macro
+mov bl, 0A0h
+endm
+lightcyan macro
+mov bl, 0B0h
+endm
+lightred macro
+mov bl, 0C0h
+endm
+lightmagenta macro
+mov bl, 0D0h
+endm
+yellow macro
+mov bl, 0E0h
+endm
+white macro
+mov bl, 0F0h
+endm
