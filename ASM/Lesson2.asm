@@ -32,10 +32,11 @@ cseg segment para 'code'
 assume cs:cseg;ds:cseg;ss:cseg;es:cseg
 org 100h
 start: jmp begin
+data segment
 n1 db 'UE Manila$'
 n2 db '***$'
 n3 db '*****$'
-
+data ends
 begin:
 cls
 
