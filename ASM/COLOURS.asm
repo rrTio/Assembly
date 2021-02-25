@@ -1,38 +1,3 @@
-data segment
-text1 db 'STRING0$'
-text2 db 'STRING1$'
-data ends
-
-gotoxy macro y,x
-mov ah,02
-mov dh,y
-mov dl,x
-int 10h
-endm
-printColour macro char,c,repetition
-mov ah,09
-mov al,char
-c   ; Colour
-mov cx,repetition
-int 10h
-endm
-string macro t
-mov ax,data
-mov ds,ax
-LEA DX,t
-mov ah,09h
-int 21h
-endm
-clear macro
-mov ax,0003h
-int 10h
-endm
-exit macro
-int 20h
-cseg ends
-end start
-endm
-
 ;\\\\\\\\\\\\\\\\\\\\\\\\\FOREGROUND COLOURS///////////////////////// DEFAULT BACKGROUND: BLACK
 blackOblack macro
 mov bl, 00h

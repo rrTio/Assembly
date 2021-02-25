@@ -9,7 +9,7 @@ mov dl,x
 int 10h
 endm
 
-printColour macro char,colour,repetition
+print macro char,colour,repetition
 mov ah,09
 mov al,char
 colour
