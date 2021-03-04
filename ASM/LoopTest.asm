@@ -38,17 +38,24 @@ inc character1
 loop loopnameinc
 endm
 
-uncLoopDecrement macro rowX2, columnY2, character2, loopnamedec
+uncLoopDecrementA macro rowX2, columnY2, character2, loopnamedecA
 inc rowX2
 dec columnY2
 dec character2
-loop loopnamedec
+loop loopnamedecA
+endm
+
+uncLoopDecrementB macro rowX3, columnY3, character3, loopnamedecB
+inc rowX3
+dec columnY3
+inc character3
+loop loopnamedecB
 endm
 
 keyVariables macro
 char1 db '1'
 char2 db 'A'
-char3 db 'Z'
+char3 db 'A'
 rowZero db 0
 columnZero db 0
 rowA db 0
@@ -84,7 +91,7 @@ uncLoopIncrement rowA, columnA, char2, loopB
 mov cx, 24
 loopC: gotoxy columnB, rowB
 print char3
-uncLoopDecrement rowB, columnB, char3, loopC
+uncLoopDecrementA rowB, columnB, char3, loopC
 
 
 exit
