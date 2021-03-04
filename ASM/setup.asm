@@ -36,6 +36,34 @@ cseg ends
 end start
 endm
 
+;conLoopIncrement = Conditional Looping Incrementation
+;format: conLoopIncrement = row, character, limit, loopName
+conLoopIncrement macro rowX, character, limit, loopname
+inc rowX
+inc character
+inc cx
+cmp cx, limit
+jbe loopname
+endm
+
+;uncLoopIncrement = Unconditional Looping Incrementation
+;format: uncLoopIncrement = row, column, character, loopName
+uncLoopIncrement macro rowX1, columnY1, character1, loopnameinc
+inc rowX1
+inc columnY1
+inc character1
+loop loopnameinc
+endm
+
+;uncLoopDecrement = Unconditional Looping Decrementation
+;format: uncloopDecrement = row, column, character, loopName
+uncLoopDecrement macro rowX2, columnY2, character2, loopnamedec
+inc rowX2
+dec columnY2
+dec character2
+loop loopnamedec
+endm
+
 cseg segment para 'code'
 assume cs:cseg
 org 100h

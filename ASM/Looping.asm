@@ -20,7 +20,7 @@ rightCharRow db 7 ;row 7
 characterLeft db 'A'
 leftCharacterRow db 0 ;Left Character Row 0
 leftCharacterColumn db 0 ;Left Character Column 0
-characterRight db 'A'
+characterRight db 'Z'
 RightCharacterRow db 0 ; Right Character Row 0
 RightCharacterColumn db 23 ;Right Character Column 23
 begin:
@@ -37,7 +37,6 @@ inc cx ;increment value
 cmp cx,8 ;loop terminator
 jbe x ;check validity
 
-;====
 ;A-Z
 mov cx,24 ;24 == limit
 y:gotoxy leftCharacterRow,leftCharacterColumn
@@ -52,7 +51,7 @@ z:gotoxy RightCharacterRow,RightCharacterColumn
 printChar characterRight
 inc RightCharacterRow
 dec RightCharacterColumn
-inc characterRight
+dec characterRight
 loop z
 
 int 20h
