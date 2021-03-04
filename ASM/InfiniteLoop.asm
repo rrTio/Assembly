@@ -1,13 +1,13 @@
-g macro r,c
+gotoxy macro row,column
 mov ah,02
-mov dh,r
-mov dl,c
+mov dh,row
+mov dl,column
 int 10h
 endm
 
-pc macro x
+printCharacter macro char
 mov ah, 02
-mov dl,x
+mov dl,char
 int 21h
 endm
 
@@ -19,12 +19,12 @@ mov ax,0003h
 int 10h
 
 x:mov cx,5
-pc 'A'
+printCharacter 'A'
 loop x
 
 
 
-g 23,0
+gotoxy 23,0
 int 20h
 cseg ends
 end start
