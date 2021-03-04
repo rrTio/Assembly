@@ -70,7 +70,7 @@ columnA db 0
 rowB db 0
 columnB db 23
 rowC db 0
-columnC db 23
+columnC db 79
 endm
 
 cseg segment para 'code'
@@ -98,7 +98,7 @@ uncLoopDecrementA rowB, columnB, char3, loopC
 
 ;uncLoopDecrement = Unconditional Looping Decrementation (print incrementation)
 ;format: uncloopDecrement = row, column, character, loopName
-initialize 24, loopD, columnC, rowC, char4
+initialize 79, loopD, columnC, rowC, char4
 uncLoopDecrementA rowC, columnC, char4, loopD
 
 exit
