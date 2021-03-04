@@ -1,7 +1,7 @@
 
  Start  Stop   Length Name               Class
 
- 00000H 0018FH 00190H CSEG               CODE
+ 00000H 001BDH 001BEH CSEG               CODE
 
 Program entry point at 0000:0100
 Warning: No stack

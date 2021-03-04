@@ -52,16 +52,25 @@ inc character3
 loop loopnamedecB
 endm
 
+initialize macro value, loopNAME, columnYvar, rowXvar, charName
+mov cx, value
+loopNAME:gotoxy columnYvar, rowXvar
+print charName
+endm
+
 keyVariables macro
 char1 db '1'
 char2 db 'A'
 char3 db 'A'
+char4 db 'Z'
 rowZero db 0
 columnZero db 0
 rowA db 0
 columnA db 0
 rowB db 0
 columnB db 23
+rowC db 0
+columnC db 23
 endm
 
 cseg segment para 'code'
@@ -74,24 +83,22 @@ clear
 
 ;conLoopIncrement = Conditional Looping Incrementation
 ;format: conLoopIncrement = row, character, limit, loopName
-mov cx, 0
-loopA:gotoxy 39, rowZero
-print char1
+initialize 0, loopA, 39, rowZero, char1
 conLoopIncrement rowZero, char1, 10, loopA
 
 ;uncLoopIncrement = Unconditional Looping Incrementation
 ;format: uncLoopIncrement = row, column, character, loopName
-mov cx, 24
-loopB:gotoxy columnA, rowA
-print char2
+initialize 24, loopB, columnA, rowA, char2
 uncLoopIncrement rowA, columnA, char2, loopB
 
-;uncLoopDecrement = Unconditional Looping Decrementation
+;uncLoopDecrement = Unconditional Looping Decrementation (print decrementation)
 ;format: uncloopDecrement = row, column, character, loopName
-mov cx, 24
-loopC: gotoxy columnB, rowB
-print char3
+initialize 24, loopC, columnB, rowB, char3
 uncLoopDecrementA rowB, columnB, char3, loopC
 
+;uncLoopDecrement = Unconditional Looping Decrementation (print incrementation)
+;format: uncloopDecrement = row, column, character, loopName
+initialize 24, loopD, columnC, rowC, char4
+uncLoopDecrementA rowC, columnC, char4, loopD
 
 exit
