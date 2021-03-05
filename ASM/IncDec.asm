@@ -1,4 +1,4 @@
-g macro r,c
+gotoxy macro r,c
 mov ah,02
 mov dh,r
 mov dl,c
@@ -29,81 +29,86 @@ begin:
 mov ax,0003h
 int 10h
 
+;Output: 5 6 7
 mov cx,3
-x1:g 5,c1
+x1:gotoxy 5,c1
 pc n1
 add c1,2
 inc n1
 loop x1
 
+;Output: & & &
 mov cx,3
-x2:g 5,c1
+x2:gotoxy 5,c1
 pc '&'
 add c1,2
 loop x2
 
+;Output: c b a
 mov cx,3
-x3:g 5,c1
+x3:gotoxy 5,c1
 pc n2
 add c1,2
 dec n2
 loop x3
 
+;Output: 8 m 5 5 o 5
 mov cx,2
-x4:g r1,5
-pc n3
+x4:gotoxy r1,5
+pc n3 ;8 _ _ 5
 inc r1
-g r1,5
-pc n4
+gotoxy r1,5
+pc n4 ;_ m _ _ o
 inc r1
-g r1,5
-pc '5'
+gotoxy r1,5
+pc '5' ;_ _5 _ _ 5
 inc r1
-sub n3,3
-add n4,2
+sub n3,3 ;8 - 3 = 5
+add n4,2 ;m + 2 = o
 loop x4
 
-mov c1,5
-
-mov cx,3
-x5:g 12,c1
-pc n5
-add c1,2
-dec n5
+;Output: z y x 
+mov c1,5 ;X coordinate
+mov cx,3 ;repeated loop 3 times
+x5:gotoxy 12,c1
+pc n5 ;'z'
+add c1,2 ;x coordinate
+dec n5 ;decrement z
 loop x5
 
+;Output: 1 2 3
 mov cx,3
-x6:g 12,c1
-pc n6
+x6:gotoxy 12,c1
+pc n6 ;'1'
 add c1,2
 inc n6
 loop x6
 
+;Output: 6 4 2
 mov cx,3
-x7:g 12,c1
-pc n7
+x7:gotoxy 12,c1
+pc n7 ;'6'
 add c1,2
 sub n7,2
 loop x7
 
-mov r1,6
-mov n6,'5'
-mov n7,'4'
-
-mov cx,3
-x8:g r1,21
-pc n6
-inc r1
-g r1,21
-pc n7
-inc r1
-inc n6
-dec n7
+;Output: 5 4 6 3 7 2
+mov r1,6 ;Declarations
+mov n6,'5' ;Declarations
+mov n7,'4' ;Declarations
+mov cx,3 ;repetition
+x8:gotoxy r1,21
+pc n6 ;'5'
+inc r1 ;increment row from row 6
+gotoxy r1,21
+pc n7 
+inc r1 ;increment row
+inc n6 ;increment '5' 5 _ 6 _ 7
+dec n7 ;decrement '4' _ 4 _ 3 _ 2
 loop x8
 
 
-
-g 23,0
+gotoxy 23,0 ;move last line to row 23, column 0
 int 20h
 cseg ends
 end start
