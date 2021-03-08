@@ -101,14 +101,14 @@ x8:gotoxy r1,21
 pc n6 ;'5'
 inc r1 ;increment row from row 6
 gotoxy r1,21
-pc n7 
+pc n7 ;'4'
 inc r1 ;increment row
 inc n6 ;increment '5' 5 _ 6 _ 7
 dec n7 ;decrement '4' _ 4 _ 3 _ 2
 loop x8
 
 
-gotoxy 23,0 ;move last line to row 23, column 0
+gotoxy 23,0 ;move last line to row 23, column
 int 20h
 cseg ends
 end start
