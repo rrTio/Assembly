@@ -28,39 +28,59 @@ org 100h
 start: jmp begin
 c1 db 0
 r1 db 0
-n1 db 'w'
-n2 db 'd'
-c2 db 3
-r2 db 3
+n1 db '2'
+
+n2 db '2'
+c2 db 4
+r2 db 4
+
 n3 db 'n'
 c3 db 6
 r3 db 6
+
+n4 db '&'
+
 r5 db 7
 c5 db 11
-n4 db '$'
+n5 db '8'
+
 r6 db 6
 c6 db 12
-n5 db '8'
+
+
 r7 db 5
 c7 db 13
+
 n6 db '3'
+
 r8 db 0
 c8 db 20
+
 n7 db 'a'
+
 r9 db 3
 c9 db 24
+
 n8 db '&'
+
 r10 db 6
 c10 db 28
+
 n9 db '9'
+
 r11 db 8
 c11 db 32
+
 n10 db '2'
+
 r12 db 5
 c12 db 35
+
 n11 db '7'
+
 r13 db 5
 c13 db 19
+
 n12 db '2'
 r14 db 6
 c14 db 18
@@ -109,8 +129,8 @@ n25 db 'a'
 begin:
 cls
 
-;;wxy
-mov cx,3
+;;2345
+mov cx,4
 x1:g r1,c1
 pc n1
 inc r1
@@ -119,25 +139,17 @@ inc n1
 loop x1
 
 ;;dcb
-mov cx,3
+mov cx,4
 x2:g r2,c2
 pc n2
 inc r2
 inc c2
-dec n2
+inc n2
 loop x2
 
-;;nml
-mov cx,3
-x3:g r3,c3
-pc n3
-inc r3
-inc c3
-dec n3
-loop x3
 
 ;;1$
-g 8,10
+g 7,9
 pc '1'
 mov cx,3
 x4:g r5,c5
